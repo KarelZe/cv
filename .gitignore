@@ -1,4 +1,12 @@
+# explicitly allow files to be shared.
+!cv_en.pdf
+!cv_en.tex
+
+# disallow pdfs in general
+*.pdf
+
 ## Core latex/pdflatex auxiliary files:
+*.tex
 *.aux
 *.lof
 *.log
