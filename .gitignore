@@ -280,14 +280,4 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
-abschlusszeugnis.pdf
-empfehlungsschreiben.pdf
-lebenslauf.pdf
-motivation_sbb*
-motivation.*
-pruefungsordnung.pdf
-rangliste.pdf
-signature.pdf
-mastervorzug.*
-cv_de.*
 Inconsolata.otf
