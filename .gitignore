@@ -1,6 +1,7 @@
 # explicitly allow files to be shared.
-!cv_en.pdf
 !cv_en.tex
+!cv_de.tex
+!vc.tex
 
 # disallow pdfs in general
 *.pdf
@@ -280,4 +281,6 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
-Inconsolata.otf
+# fonts 
+*.otf
+*.ttf

@@ -1,5 +1,5 @@
-My cv template, based on [Heather`s cv](https://github.com/heathermiller/cv). You can find my sample [here](./cv_en.pdf).
+My cv template, based on [modern cv](https://github.com/xdanaux/moderncv/).
 
 ## Requirements
-- Inconsolata font
-- LaTeX Installation e.g. xelatex
+- Inconsolata font, Minion Pro font, and Myriad Pro font
+- LaTeX installation e.g. xelatex with shell-espace enabled
