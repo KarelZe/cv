@@ -3,7 +3,6 @@
 \input{vc}
 
 \documentclass[11pt,a4paper,sans]{moderncv}
-
 \usepackage[ngerman]{babel}
 \usepackage[ngerman]{isodate}
 \usepackage{icomma}
@@ -105,80 +104,104 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
-\section{Skills}
-\cvitemwithcomment{Programming Languages}{python (advanced), java (basic), and SQL (basic)}{}
-\cvitemwithcomment{Libraries}{\makecell[tl]{CatBoost, Hydra, jupyter, matplotlib, MLflow, NumPy, optuna, pandas, pytest,\\ PyTorch, scikit-learn, sklearn-onnx, and wandb}}{}
-\cvitemwithcomment{Software Development}{git, jupyter, and linux}{}
-\cvitemwithcomment{Languages}{German (native) and English (fluent)}{}
+\section{Fähigkeiten}
+\cvitemwithcomment{Programmiersprachen}{Python (fortgeschritten), Java (grundlegend) und SQL (grundlegend)}{}
+\cvitemwithcomment{Bibliotheken}{\makecell[tl]{CatBoost, Hydra, Jupyter, Matplotlib, MLflow, Numpy, Optuna, Pandas, Pytest,\\ PyTorch, Scikit-Learn, Sklearn-Onnx und Wandb}}{}
+\cvitemwithcomment{Software Entwicklung}{Git, Jupyter und Linux}{}
+\cvitemwithcomment{Sprachen}{Deutsch (Muttersprache) und Englisch (verhandlungssicher)}{}
 
-\section{Work Experience}
-\subsection{Working Student Data Science}
-\cventry{Jul.~2023 -- today}{}{Atruvia AG}{Karlsruhe, DE}{}{Selected tasks:%
+\section{Arbeitserfahrung}
+\subsection{Werkstudent Data Science}
+\cventry{Jul.~2023 -- heute}{}{Atruvia AG}{Karlsruhe}{}{Ausgewählte Aufgaben:%
 \begin{itemize}%
-    \item Design and reimplement data science pipelines for fraud detection using pandas, PySpark, PyTorch, and Scikit-Learn.
-    \item Develop sklearn-compatible estimators and their corresponding onnx converter using sklearn-onnx.
-    \item Extend data science pipelines with the experiment tracking solution MLflow.
-    \item Extend data science pipelines with the configuration management solution Hydra.
+    \item Konzeption und Neuimplementierung der Data Science Pipelines zur Betrugserkennung in der Anwendung agree21 Fraud Detection% mittels Pandas, PySpark, PyTorch und Scikit-Learn
+    \item Entwicklung Sklearn-kompatibler Estimator und zugehöriger onnx-Konverter mittels Sklearn-Onnx
+    \item Anbindung von Data Science Pipelines an die Experimenten-Tracking-Lösung MLflow
+    \item Anbindung von Data Science Pipelines an die Konfigurations-Management-Lösung Hydra
 \end{itemize}%
 }
 
-\subsection{Product Specialist}
-\cventry{Oct.~2019 -- Jun.~2021}{}{Fiducia \& GAD IT AG (now Atruvia AG)}{Karlsruhe, DE}{}{Selected tasks:%
+\subsection{Produktspezialist}
+\cventry{Okt.~2019 -- Jun.~2021}{}{Fiducia \& GAD IT AG (nun Atruvia AG)}{Karlsruhe}{}{Ausgewählte Aufgaben:%
 \begin{itemize}%
-    \item Analyze service tickets in third-level support for the agree21 loan processing application.
-    \item Write specifications for the agree21 loan processing application for loans in local and foreign currency.
-    \item Create application-specific reports.
-    \item Conceptualize and maintain automated regression tests.
+    \item Analyse von Service-Tickets im Third-Level-Support für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
+    \item Erstellung von Pflichtenheften für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
+    % \item Durchführung von Systemtests 
+    \item Erstellung von anwendungsbezogenen Auswertungen 
+    \item Konzeption und Wartung von automatisierten Regressionstests
 \end{itemize}%
 }
-\subsection{Banking Professional}
-\cventry{Mar.~2014 -- Aug.~2016}{}{Raiffeisenbank Aschberg eG (now VR-Bank Donau-Mindel eG)}{Holzheim, DE}{}{Selected tasks:%
+\subsection{Bankkaufmann}
+\cventry{Mrz.~2014 -- Aug.~2016}{}{Raiffeisenbank Aschberg eG (nun VR-Bank Donau-Mindel eG)}{Holzheim}{}{Ausgewählte Aufgaben:%
 \begin{itemize}% 
-    \item Create and perform regular reports and business analyses at the bank level.
-    \item Generate application-specific reports.
-    \item Further develop and maintain the overall bank control system while adhering to regulatory requirements.
+    \item Erstellung und Durchführung regelmäßiger Reports und betriebswirtschaftlicher Analysen auf Gesamtbankebene
+    \item Erstellung individueller Auswertungen in Bank- und Verbundanwendungen 
+    \item Weiterentwicklung und Pflege des Gesamtbanksteuerungssystems unter Beachtung der aufsichtsrechtlichen Anforderungen 
 \end{itemize}%
 }
 
-\section{Education}
-\subsection{Master's in Business Informatics}
-\cventry{Apr.~2021 -- today}{}{Karlsruhe Institute of Technology}{Karlsruhe, DE}{}{Selected courses: machine learning, recommender systems, deep learning for asset pricing, data privacy, derivatives, and valuation. Current GPA: 1.4 (Top 10\%)
+\section{Ausbildung}
+\subsection{Master Wirtschaftsinformatik}
+\cventry{Apr.~2021 -- heute}{Wirtschaftsinformatik}{Karlsruher Institut für Technologie}{Karlsruhe}{}{Ausgewählte Inhalte: Machine Learning, Recommendersysteme, Deep Learning für Asset Pricing, Datenschutz durch Technik, Derivate und Valuation. Aktueller Notendurchschnitt: 1,4 (Top 10~\%)
 \newline{}%
-Selected Works:%
+Ausgewählte Arbeiten:%
 \begin{itemize}%
-\item Master's Thesis: Option Trade Classification using Machine Learning. Available at \url{https://github.com/KarelZe/thesis}
-\item Seminar Paper: Predicting Stock Returns with Option Data.
-% \item Seminar Paper: Deep Learning in Asset Pricing: Do or Don't?
+\item Masterthesis: Option Trade Classification using Machine Learning. Verfügbar unter \url{https://github.com/KarelZe/thesis}
+\item Seminararbeit: Predicting Stock Returns with Option Data
+% \item Seminararbeit: Deep Learning in Asset Pricing: Do or Don't?
 \end{itemize}%
 }
 
-\subsection{Preparation for Master's in Business Informatics}
-\cventry{Oct.~2019 -- Mar.~2021}{Computer Science}{Karlsruhe Institute of Technology}{Karlsruhe, DE}{}{Selected courses: linear algebra and analysis. Earned credit for master's studies.}
+\subsection{Vorbereitung Master Wirtschaftsinformatik}
+\cventry{Okt.~2019 -- Mrz.~2021}{Informatik}{Karlsruher Institut für Technologie}{Karlsruhe}{}{Ausgewählte Inhalte: Lineare Algebra und Analysis. Erwerb von Mastervorzugsleistungen.}
 
-\subsection{Bachelor's in Business Informatics}
-\cventry{Oct.~2016 -- Sep.~2019}{}{Baden-Wuerttemberg Cooperative State University and Fiducia \& GAD IT AG}{Karlsruhe, DE}{}{Selected courses: software engineering, programing techniques, mathematical and business fundamentals. Achieved GPA: 1.2 (Top 10\%)
+\subsection{Bachelor Wirtschaftsinformatik}
+\cventry{Okt.~2016 -- Sep.~2019}{}{Duale Hochschule Baden-Württemberg und Fiducia \& GAD IT AG}{Karlsruhe}{}{Ausgewählte Inhalte: Software Engineering, Programmiertechniken, mathematische und betriebswirtschaftliche Grundlagen. Erzielter Notenschnitt: 1{,}2 (Top 10~\%)
+% \newline{}%
+% Ausgewählte Arbeiten:%
+% \begin{itemize}%
+% \item Bachelorthesis: Beschleunigung der Berechnung einer Risikosimulation mit General Purpose Graphics Processing Units
+% \item Projektarbeit: Entwicklung eines Prototypen zur Fehlererkennung bei Devisenkursen
+% \end{itemize}%
 }
 
-\subsection{Exchange Semester}
-\cventry{Jan.~2018 -- Jun.~2018}{}{University of Abertay}{Dundee, UK}{}{Selected courses: parallel computing, software development for mobile devices, and financial markets. Achieved GPA: 1.0}
+\subsection{Auslandsaufenthalt}
+\cventry{Jan.~2018 -- Jun.~2018}{}{University of Abertay}{Dundee, UK}{}{Ausgewählte Inhalte: Parallel Computing, Software-Entwicklung für mobile Endgeräte und Finanzmärkte. Erzielter Notenschnitt: 1{,}0}
 
-\subsection{Advanced Technical College Entrance Qualification}
-\cventry{Sep.~2011 -- Jul.~2014}{}{Berufsschule Plus}{Lauingen, DE}{}{Achieved GPA: 1.0}
+\subsection{Fachhochschulreife}
+\cventry{Sep.~2011 -- Jul.~2014}{}{Berufsschule Plus}{Lauingen}{}{Erzielter Notenschnitt: 1{,}0}
 
-\subsection{Vocational Training}
-\cventry{Sep.~2011 -- Feb.~2014}{}{Raiffeisenbank Aschberg eG}{Holzheim, DE}{}{Achieved GPA: 1.6}
+\subsection{Ausbildung zum Bankkaufmann}
+\cventry{Sep.~2011 -- Feb.~2014}{}{Raiffeisenbank Aschberg eG}{Holzheim}{}{Erzielter Notenschnitt: 1{,}6}
 
-\section{Scholarships}
-\cventry{Sep.~2018 -- Sep.~2023}{Vocational Training Programme for the Highly Talented}{BMBF}{}{}{}
-\cventry{Jan.~2018 -- Jun.~2018}{PROMOS Scholarship}{German Academic Exchange Service}{}{}{}
+% \subsection{Mittlere Reife}
+% \cventry{Sep.~2005 -- Jul.~2011}{}{St.-Bonaventura-Realschule}{Dillingen}{}{}{}
 
-\section{Awards}
-\cventry{2019}{Outstanding student award in business informatics}{Baden-Wuerttemberg Cooperative State University}{Karlsruhe, DE}{}{}
+\section{Stipendien}
+\cventry{Sep.~2018 -- Sep.~2023}{Aufstiegsstipendium}{Stiftung Begabtenförderung berufliche Bildung}{}{}{}
+\cventry{Jan.~2018 -- Jun.~2018}{PROMOS Stipendium}{Deutscher Akademischer Austauschdienst}{}{}{}
 
-\section{Volunteer Work}
-\cventry{Jun.~2021 -- today}{Academic Supervisor}{Baden-Wuerttemberg Cooperative State University}{Karlsruhe, DE}{}{Supervise project and bachelor's theses with a focus on machine learning.}
+% \section{Auszeichnungen}
+% \cventry{2019}{Auszeichnung als Jahrgangsbester im Studiengang Wirtschaftsinformatik}{Duale Hochschule Baden-Württemberg}{Karlsruhe}{}{}
+
+% \cventry{2014}{Auszeichnung für herausragende schulische Leistungen}{Regierung von Schwaben}{Augsburg}{}{}
+
+% \section{Zertifikate}
+% \cventry{Apr.~2020}{DAT256x: Essential Math for Machine Learning: Python Edition}{Microsoft}{Online}{}{}
+% \cventry{Apr.~2020}{DA0101EN: Analyzing Data with Python}{IBM}{Online}{}{}
+% \cventry{Apr.~2020}{DB0201EN: SQL for Data Science}{IBM}{Online}{}{}
+
+\section{Ehrenamt}
+\cventry{Jun.~2021 -- heute}{Wissenschaftlicher Betreuer}{Duale Hochschule Baden-Württemberg}{Karlsruhe}{}{Betreuung von Projekt- und Bachelorarbeiten mit dem Schwerpunkt auf Machine Learning.}
+
 
 \section{Hobbies}
-\cvitem{}{Hiking, cooking, and passive investing}{}{}
+\cvitem{}{Wandern, kochen und passives investieren}{}{}
+
+
+% \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+% \includepdf[pages=-]{arbeitszeugnis-fiducia}
+% \includepdf[pages=-]{arbeitszeugnis-raiba}
+% \includepdf[pages=-]{notenauszug}
 
 \end{document}
