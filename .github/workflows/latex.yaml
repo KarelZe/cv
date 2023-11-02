@@ -12,6 +12,7 @@ jobs:
           latexmk_shell_escape: true
           root_file: cv_de.tex
           latexmk_use_xelatex: true
+          args: -enable-write18
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
