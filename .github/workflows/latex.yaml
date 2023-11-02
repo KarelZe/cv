@@ -4,6 +4,8 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      - name: install gawk
+        run: sudo apt-get update && sudo apt install gawk
       - name: Set up Git repository
         uses: actions/checkout@v4
       - name: Compile LaTeX document
