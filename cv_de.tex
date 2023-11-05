@@ -31,35 +31,10 @@
 %----------------------------------------------------------------------------------
 \usepackage[ngerman]{babel}
 
-\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{makecell}
 \makeatletter
-% \patchcmd{\makeletterhead}% <cmd>
-%   {\raggedright \@opening}% <search>
-%   {\@opening}% <replace>
-%   {}{}% <success><failure>
-
-%   \renewcommand*{\makeletterclosing}{
-%   \@closing\\[3em]%
-%   \includegraphics{signature}\\% Insert signature
-%   {\bfseries \@firstname~\@lastname}%
-%   \ifthenelse{\isundefined{\@enclosure}}{}{%
-%     \\%
-%     \vfill%
-%     {\color{color2}\itshape\enclname: \@enclosure}}}
-
-% \renewcommand*{\makecvfooter}{%
-%   \recomputecvlengths%
-%   \fancyfoot[C]{\small rev \texttt{\VCRevision}}%
-%   \fancyfoot[R]{\thepage}%
-% }
-% \makeatother
-
-% {\today}
-% {\small rev \texttt{\VCRevision}}
-% {\thepage}
 
 \begin{document}
 

@@ -114,42 +114,42 @@
 \section{Work Experience}
 \subsection{Working Student Data Science}
 \cventry{Jul.~2023 -- today}{}{Atruvia AG}{Karlsruhe, DE}{}{Selected tasks:%
-	\begin{itemize}%
-		\item Design and reimplement data science pipelines for fraud detection using pandas, PySpark, PyTorch, and Scikit-Learn.
-		\item Develop sklearn-compatible estimators and their corresponding onnx converter using sklearn-onnx.
-		\item Extend data science pipelines with the experiment tracking solution MLflow.
-		\item Extend data science pipelines with the configuration management solution Hydra.
-	\end{itemize}%
+\begin{itemize}%
+    \item Design and reimplement data science pipelines for fraud detection using pandas, PySpark, PyTorch, and Scikit-Learn.
+    \item Develop sklearn-compatible estimators and their corresponding onnx converter using sklearn-onnx.
+    \item Extend data science pipelines with the experiment tracking solution MLflow.
+    \item Extend data science pipelines with the configuration management solution Hydra.
+\end{itemize}%
 }
 
 \subsection{Product Specialist}
 \cventry{Oct.~2019 -- Jun.~2021}{}{Fiducia \& GAD IT AG (now Atruvia AG)}{Karlsruhe, DE}{}{Selected tasks:%
-	\begin{itemize}%
-		\item Analyze service tickets in third-level support for the agree21 loan processing application.
-		\item Write specifications for the agree21 loan processing application for loans in local and foreign currency.
-		\item Create application-specific reports.
-		\item Conceptualize and maintain automated regression tests.
-	\end{itemize}%
+\begin{itemize}%
+    \item Analyze service tickets in third-level support for the agree21 loan processing application.
+    \item Write specifications for the agree21 loan processing application for loans in local and foreign currency.
+    \item Create application-specific reports.
+    \item Conceptualize and maintain automated regression tests.
+\end{itemize}%
 }
 \subsection{Banking Professional}
 \cventry{Mar.~2014 -- Aug.~2016}{}{Raiffeisenbank Aschberg eG (now VR-Bank Donau-Mindel eG)}{Holzheim, DE}{}{Selected tasks:%
-	\begin{itemize}% 
-		\item Create and perform regular reports and business analyses at the bank level.
-		\item Generate application-specific reports.
-		\item Further develop and maintain the overall bank control system while adhering to regulatory requirements.
-	\end{itemize}%
+\begin{itemize}% 
+    \item Create and perform regular reports and business analyses at the bank level.
+    \item Generate application-specific reports.
+    \item Further develop and maintain the overall bank control system while adhering to regulatory requirements.
+\end{itemize}%
 }
 
 \section{Education}
 \subsection{Master's in Business Informatics}
 \cventry{Apr.~2021 -- today}{}{Karlsruhe Institute of Technology}{Karlsruhe, DE}{}{Selected courses: machine learning, recommender systems, deep learning for asset pricing, data privacy, derivatives, and valuation. Current GPA: 1.4 (Top 10\%)
-	\newline{}%
-	Selected Works:%
-	\begin{itemize}%
-		\item Master's Thesis: Option Trade Classification using Machine Learning. Available at \url{https://github.com/KarelZe/thesis}
-		\item Seminar Paper: Predicting Stock Returns with Option Data.
-		      % \item Seminar Paper: Deep Learning in Asset Pricing: Do or Don't?
-	\end{itemize}%
+\newline{}%
+Selected Works:%
+\begin{itemize}%
+\item Master's Thesis: Option Trade Classification using Machine Learning. Available at \url{https://github.com/KarelZe/thesis}
+\item Seminar Paper: Predicting Stock Returns with Option Data.
+% \item Seminar Paper: Deep Learning in Asset Pricing: Do or Don't?
+\end{itemize}%
 }
 
 \subsection{Preparation for Master's in Business Informatics}
