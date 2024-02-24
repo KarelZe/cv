@@ -7,7 +7,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: warmup.tex
+          root_file: |
+            warmup.tex
       - name: install gawk
         run: sudo apt-get update && sudo apt install gawk
       - name: Set up Git repository
