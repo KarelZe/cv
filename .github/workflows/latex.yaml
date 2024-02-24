@@ -4,6 +4,10 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: warmup.tex
       - name: install gawk
         run: sudo apt-get update && sudo apt install gawk
       - name: Set up Git repository
