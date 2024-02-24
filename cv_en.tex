@@ -1,7 +1,3 @@
-% git version tracking
-\immediate\write18{sh ./vc}
-\input{vc}
-
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 \usepackage[ngerman]{babel}
@@ -9,6 +5,10 @@
 \usepackage{icomma}
 \usepackage{graphicx}
 \usepackage{pdfpages}
+
+\usepackage{fontspec}
+\setromanfont[Ligatures=TeX,Ligatures={Common}]{Minion Pro} % Numbers={OldStyle}
+\setsansfont[Ligatures=TeX]{Myriad Pro}
 
 \definecolor{blue}{HTML}{265B8C}
 % moderncv themes
@@ -40,7 +40,7 @@
 \phone[mobile]{0171 2842023}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 % \phone[fixed]{+2~(345)~678~901}
 % \phone[fax]{+3~(456)~789~012}
-\email{mail@markusbilz.com}                               % optional, remove / comment the line if not wanted
+\email{cv@markusbilz.com}                               % optional, remove / comment the line if not wanted
 \homepage{www.markusbilz.com}                         % optional, remove / comment the line if not wanted
 \social[linkedin]{markus-bilz}                        % optional, remove / comment the line if not wanted
 % \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
@@ -90,7 +90,7 @@
 
 \renewcommand*{\makecvfoot}{%
   \recomputecvlengths%
-  \fancyfoot[C]{\small rev \texttt{\VCRevision}}%
+  \fancyfoot[C]{\small rev \texttt{c788c46}}%
   \fancyfoot[R]{\thepage}%
 }
 \makeatother

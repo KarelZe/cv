@@ -4,8 +4,6 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: install gawk
-        run: sudo apt-get update && sudo apt install gawk
       - name: Set up Git repository
         uses: actions/checkout@v4
       - name: Compile LaTeX document
@@ -15,8 +13,8 @@ jobs:
             cv_en.tex
             cv_de.tex
           latexmk_use_xelatex: true
-          latexmk_shell_escape: true
-          args: -enable-write18
+          extra_fonts: |
+            ./fonts/*.otf
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
