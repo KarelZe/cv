@@ -274,7 +274,3 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
-
-# fonts 
-*.otf
-*.ttf
