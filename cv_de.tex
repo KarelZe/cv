@@ -1,174 +1,197 @@
-\documentclass[12pt, a4paper]{awesome-cv}
+\documentclass[11pt,a4paper,sans]{moderncv}
+
 \usepackage[ngerman]{babel}
 \usepackage[ngerman]{isodate}
 \usepackage{icomma}
 \usepackage{graphicx}
 \usepackage{pdfpages}
 
-\colorlet{awesome}{awesome-darknight}
+\usepackage{fontspec}
+\setromanfont[Ligatures=TeX,Ligatures={Common}]{Minion Pro} % Numbers={OldStyle}
+\setsansfont[Ligatures=TeX]{Myriad Pro}
+
+\definecolor{blue}{HTML}{265B8C}
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}
+
+\definecolor{sectioncolor}{HTML}{265B8C}
+\definecolor{firstnamecolor}{HTML}{265B8C}
+\definecolor{familynamecolor}{HTML}{265B8C}
+\definecolor{quotecolor}{HTML}{265B8C}
+
+% color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
-% \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
-\setbool{acvSectionColorHighlight}{false}
+\usepackage[scale=0.75, top=2cm, bottom=2cm]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
 \name{Markus}{Bilz}
-\title{Data Scientist}                               
-\address{Mathystr. 14-16, 76133 Karlsruhe}
-\mobile{0171 2842023}                  
-\email{cv@markusbilz.com}                               
-\homepage{www.markusbilz.com}                         
-\linkedin{markus-bilz}                                               
-\github{KarelZe}                            
-\stackoverflow{5755604}{karelze}                             
+\title{Data Science}                               % optional, remove / comment the line if not wanted
+\address{Mathystr. 14-16}{76133 Karlsruhe}{}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{0171 2842023}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{cv@markusbilz.com}                               % optional, remove / comment the line if not wanted
+\homepage{www.markusbilz.com}                         % optional, remove / comment the line if not wanted
+\social[linkedin]{markus-bilz}                        % optional, remove / comment the line if not wanted
+% \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+% \social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+\social[github]{KarelZe}                              % optional, remove / comment the line if not wanted
+% \social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
+% \social[skype]{jdoe}
+\social[stackoverflow]{5755604/karelze}                             % optional, remove / comment the line if not wanted
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+% \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
 \usepackage[ngerman]{babel}
 
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+
 \usepackage{makecell}
 \makeatletter
+\patchcmd{\makeletterhead}% <cmd>
+  {\raggedright \@opening}% <search>
+  {\@opening}% <replace>
+  {}{}% <success><failure>
+
+  \renewcommand*{\makeletterclosing}{
+  \@closing\\[3em]%
+  \includegraphics{signature}\\% Insert signature
+  {\bfseries \@firstname~\@lastname}%
+  \ifthenelse{\isundefined{\@enclosure}}{}{%
+    \\%
+    \vfill%
+    {\color{color2}\itshape\enclname: \@enclosure}}}
+
+\renewcommand*{\makecvfoot}{%
+  \recomputecvlengths%
+  \fancyfoot[C]{\small rev \texttt{c788c46}}%
+  \fancyfoot[R]{\thepage}%
+}
+\makeatother
 
 \begin{document}
 
 %-----       resume       ---------------------------------------------------------
-\makecvheader[C]
+\makecvtitle
 
-\makecvfooter
-  {\small \today}
-  {\small rev \texttt{c788c46}}
-  {\small \thepage}
+\cvitemwithcomment{Geburtsdatum}{29. Mai 1995}{}
+\cvitemwithcomment{Geburtsort}{Augsburg}{}
+\cvitemwithcomment{Nationalität}{Deutsch}{}
+\cvitemwithcomment{Sprachen}{Deutsch (Muttersprache) and Englisch (fließend)}{}
 
+% \section{Fähigkeiten}
+% \cvitemwithcomment{Pragrammiersprachen}{python (fortgeschritten), java (grundlegend), and SQL (grundlegend)}{}
+% \cvitemwithcomment{Bibliotheken}{\makecell[tl]{CatBoost, Hydra, jupyter, matplotlib, MLflow, NumPy, optuna, pandas, pytest,\\ PyTorch, scikit-learn, sklearn-onnx, and wandb}}{}
+% \cvitemwithcomment{Software Softwareentwicklung}{git, jupyter, and linux}{}
 
-\begin{cvskills}
-\cvskill{Geburtsdatum}{29. Mai 1995}
-\cvskill{Geburtsort}{Augsburg}
-\cvskill{Nationalität}{Deutsch}
-\cvskill{Familienstand}{Ledig}
-\end{cvskills}
-
-\cvsection{Ausbildung}
-\begin{cventries}
-\cventry{Karlsruher Institut für Technologie}{Master Wirtschaftsinformatik}{Karlsruhe}{Apr.~2021 -- Jan.~2024}{
-\begin{cvitems}
-\item Inhalte:
-\subitem Machine Learning
-\subitem Recommendersysteme
-\subitem Deep Learning für Asset Pricing
-\subitem Datenschutz durch Technik
-\subitem Derivate
-% \subitem Valuation
-\item Ausgewählte Arbeiten:
-\begin{itemize}
-\item Masterthesis: Option Trade Classification using Machine Learning. Verbesserung des State-of-the-Art bei der Klassifikation von Options-Trades um 3{,}73~\%--7{,}76~\% in Accuracy mittels Transformern und Gradient Boosting gelernt auf (partiell) gelabelten Daten. Verfügbar unter \url{https://github.com/KarelZe/thesis}.
-\item Seminararbeit: Predicting Stock Returns with Option Data
-\end{itemize}
-% \item Seminararbeit: Deep Learning in Asset Pricing: Do or Don't?
-\item Notendurchschnitt: 1{,}2
-\end{cvitems}
+\section{Ausbildung}
+\subsection{Master Wirtschaftsinformatik}
+\cventry{Apr.~2021 -- Jan.~2024}{}{Karlsruher Institut für Technologie}{Karlsruhe, DE}{}{Inhalte: Machine Learning, Recommendersysteme, Datenschutz durch Technik, Derivate und Valuation.\newline{}%
+	 Abschlussnote: 1{,}3%
+	\newline{}%
+	Arbeiten:%
+	\begin{itemize}%
+		\item Masterthesis: Option Trade Classification using Machine Learning. Verfügbar unter \url{https://github.com/KarelZe/thesis}
+		\item Seminararbeit: Predicting Stock Returns with Option Data.
+		      % \item Seminar Paper: Deep Learning in Asset Pricing: Do or Don't?
+	\end{itemize}%
 }
 
-\cventry{Karlsruher Institut für Technologie}{Vorbereitung Master Wirtschaftsinformatik}{Karlsruhe}{Okt.~2019 - Mrz.~2021}{
-  \begin{cvitems}
-\item Inhalte:
-  \subitem Lineare Algebra
-  \subitem Analysis
-  \subitem Erwerb von Mastervorzugsleistungen
-\end{cvitems}
-} 
-\cventry{Duale Hochschule Baden-Württemberg und Fiducia \& GAD IT AG}{Bachelor Wirtschaftsinformatik}{Karlsruhe}{Okt.~2016 - Sep.~2019}{
-  \begin{cvitems}
-\item Inhalte:
-\subitem Software Engineering
-\subitem Programmiertechniken
-\subitem Mathematische und betriebswirtschaftliche Grundlagen
-\item Ausgewählte Arbeiten:
-\subitem Bachelorthesis: Beschleunigung der Berechnung einer Risikosimulation mit General Purpose Graphics Processing Units
-\subitem Projektarbeit: Entwicklung eines Prototypen zur Fehlererkennung bei Devisenkursen
-\item Abschlussnote: 1{,}2 (Top 10~\%)
-\end{cvitems}
-}
-\cventry{University of Abertay}{Auslandsaufenthalt}{Dundee, UK}{Jan.~2018 -- Jun.~2018}{
-  \begin{cvitems}
-    \item Inhalte:
-    \subitem Parallel Computing
-    \subitem Software-Entwicklung für mobile Endgeräte
-    \subitem Finanzmärkte
-\item Abschlussnote: 1{,}0
-  \end{cvitems}}
+\subsection{Vorbereitung Master Wirtschaftsinformatik}
+\cventry{Okt.~2019 -- Mrz.~2021}{Informatik}{Karlsruher Institut für Technologie}{Karlsruhe, DE}{}{Inhalte: Lineare Algebra, Analysis, Erwerb von Mastervorzugsleistungen.}
 
-\cventry{Berufsschule Plus}{Fachhochschulreife}{Lauingen}{Sep.~2011 -- Jul.~2014}{Abschlussnote: 1{,}0 (Top 10~\%)}
-
-\cventry{Raiffeisenbank Aschberg eG}{Ausbildung zum Bankkaufmann}{Holzheim}{Sep.~2011 -- Feb.~2014}{Abschlussnote: 1{,}6}
-\end{cventries}
-
-
-\cvsection{Berufserfahrung}
-\begin{cventries}
-
-\cventry{Atruvia AG}{Werkstudent Data Science}{Karlsruhe}{Jul.~2023 -- Dez.~2023}{
-\begin{cvitems}
-    \item Konzeption und Neuimplementierung der Data Science Pipelines zur Betrugserkennung im Zahlungsverkehr für die\\ Anwendung agree21 Fraud Detection (ca. 600~Mio. Transaktionen)
-    \item Anbindung von Data Science Pipelines an die Experimenten-Tracking-Lösung MLflow
-    \item Integration der Konfigurations-Management-Lösung Hydra in Data Science Pipelines
-\end{cvitems}
+\subsection{Bachelor Wirtschaftsinformatik}
+\cventry{Okt.~2016 -- Sep.~2019}{}{Duale Hochschule Baden-Württemberg}{Karlsruhe, DE}{}{Inhalte: Software Engineering, Programmiertechniken, mathematische und wirtschaftliche Grundlagen.\newline{}%
+Abschlussnote: 1{,}2%
 }
 
-\cventry{Fiducia \& GAD IT AG (nun Atruvia AG)}{Produktspezialist}{Karlsruhe}{Okt.~2019 -- Jun.~2021}{
-\begin{cvitems}
-    \item Analyse von Service-Tickets im Third-Level-Support für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
-    \item Erstellung von Pflichtenheften für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
-    % \item Durchführung von Systemtests 
-    \item Erstellung von anwendungsbezogenen Auswertungen 
-    \item Konzeption und Wartung von automatisierten Regressionstests
-\end{cvitems}
+\subsection{Auslandsaufenthalt}
+\cventry{Jan.~2018 -- Jun.~2018}{}{University of Abertay}{Dundee, UK}{}{Inhalte: Parallel Computing, Software-Entwicklung für mobile Endgeräte und Finanzmärkte. Abschlussnote: 1{,}0}
+
+\subsection{Fachhochschulreife}
+\cventry{Sep.~2011 -- Jul.~2014}{}{Berufsschule Plus}{Lauingen, DE}{}{Abschlussnote: 1{,}0}
+
+\subsection{Ausbildung zum Bankkaufmann}
+\cventry{Sep.~2011 -- Feb.~2014}{}{Raiffeisenbank Aschberg eG}{Holzheim, DE}{}{Abschlussnote: 1{,}6}
+
+\section{Berufserfahrung}
+
+\subsection{Data Scientist}
+\cventry{Feb.~2024 -- heute}{}{Atruvia AG}{Karlsruhe, DE}{}{Aufgaben:%
+	\begin{itemize}%
+		\item Konzeption und Neuimplementierung von Dokumenten AI Lösungen
+		\item Generierung synthetischer Datensets
+		% \item Experimentelle Modelloptimierungen
+		\item Recherche und Evaluierung alternativer Modellarchitekturen
+	\end{itemize}%
 }
-\cventry{Raiffeisenbank Aschberg eG (nun VR-Bank Donau-Mindel eG)}{Bankkaufmann}{Holzheim}{Mrz.~2014 - Aug.~2016}{
-\begin{cvitems}
-    \item Erstellung und Durchführung regelmäßiger Reports und betriebswirtschaftlicher Analysen auf Gesamtbankebene
-    \item Erstellung individueller Auswertungen in Bank- und Verbundanwendungen 
-    \item Weiterentwicklung und Pflege des Gesamtbanksteuerungssystems unter Beachtung der aufsichtsrechtlichen Anforderungen 
-\end{cvitems}
+
+\subsection{Werkstudent Data Science}
+\cventry{Jul.~2023 -- Dez.~2023}{}{Atruvia AG}{Karlsruhe, DE}{}{Aufgaben:%
+	\begin{itemize}%
+		\item Konzeption und Neuimplementierung der Data Science Pipelines zur Betrugserkennung im Zahlungsverkehr für die Anwendung agree21 Fraud Detection (ca. 600~Mio. Transaktionen)
+		% \item Anbindung von Data Science Pipelines an die Experimenten-Tracking-Lösung MLflow
+		\item Experimentelle Modelloptimierungen (ca. 12~Mio. eingsparter Schaden p.~a.)
+		% \item Integration der Konfigurations-Management-Lösung Hydra in Data Science Pipelines
+	\end{itemize}%
 }
-\end{cventries}
 
+\subsection{Business Analyst}
+\cventry{Okt.~2019 -- Jun.~2021}{}{Fiducia \& GAD IT AG (nun Atruvia AG)}{Karlsruhe, DE}{}{Aufgaben:%
+	\begin{itemize}%
+		\item Analyse von Service-Tickets im Third-Level-Support für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
+		\item Erstellung von Pflichtenheften für die Anwendungen agree21 Darlehen und Fremdwährungsdarlehen 
+		% \item Durchführung von Systemtests 
+		% \item Erstellung von anwendungsbezogenen Auswertungen 
+		\item Konzeption und Wartung von automatisierten Regressionstests
+	\end{itemize}%
+}
+\subsection{Bankkaufmann}
+\cventry{Mrz.~2014 -- Aug.~2016}{}{Raiffeisenbank Aschberg eG (nun VR-Bank Donau-Mindel eG)}{Holzheim, DE}{}{Aufgaben:%
+	\begin{itemize}% 
+		\item Erstellung und Durchführung regelmäßiger Reports und betriebswirtschaftlicher Analysen auf Gesamtbankebene
+		\item Erstellung individueller Auswertungen in Bank- und Verbundanwendungen 
+		\item Weiterentwicklung und Pflege des Gesamtbanksteuerungssystems unter Beachtung der aufsichtsrechtlichen Anforderungen 	
+	\end{itemize}%
+}
 
-% \cvsection{Auszeichnungen}
-% \begin{cvhonors}
-% \cvhonor{Auszeichnung als Jahrgangsbester}{Duale Hochschule Baden-Württemberg}{Karlsruhe}{2019}
-% \cvhonor{Auszeichnung für herausragende schulische Leistungen}{Regierung von Schwaben}{Augsburg}{2014}
-% \end{cvhonors}
+\section{Stipendien}
+\cventry{Sep.~2018 -- Sep.~2023}{Aufstiegsstipendium}{Stiftung Begabtenförderung berufliche Bildung}{Bonn, DE}{}{}
+\cventry{Jan.~2018 -- Jun.~2018}{PROMOS Stipendium}{Deutscher Akademischer Austauschdienst}{Bonn, DE}{}{}
 
-\cvsection{Fähigkeiten}
-\begin{cvskills}
-\cvskill{Programmiersprachen}{Python (fortgeschritten), Java (grundlegend) und SQL (grundlegend)}
-\cvskill{Bibliotheken}{\makecell[tl]{CatBoost, Hydra, Jupyter, Matplotlib, MLflow, Numpy, Optuna, Pandas, Pytest, PyTorch, Scikit-Learn,\\ Sklearn-Onnx und Wandb}}
-\cvskill{Software Entwicklung}{Git, Jupyter und Linux}
-\cvskill{Sprachen}{Deutsch (Muttersprache) und Englisch (verhandlungssicher)}
-\end{cvskills}
+\section{Auszeichnungen}
+\cventry{2019}{Jahrgangsbester im Studiengang Wirtschaftsinformatik}{Duale Hochschule Baden-Württemberg}{Karlsruhe, DE}{}{}
 
-\cvsection{Stipendien}
-\begin{cvhonors}
-\cvhonor{Aufstiegsstipendium}{Stiftung Begabtenförderung berufliche Bildung}{Bonn}{2018}
-\cvhonor{PROMOS Stipendium}{Deutscher Akademischer Austauschdienst}{Bonn}{2018}
-\end{cvhonors}
+\section{Ehrenamt}
+\cventry{Jun.~2021 -- heute}{Wissenschaftlicher Betreuer}{Duale Hochschule Baden-Württemberg}{Karlsruhe, DE}{}{Betreuung von Projekt- und Bachelorarbeiten mit Fokus auf Machine Learning}
 
-% \cvsection{Zertifikate}
-% \cventry{Apr.~2020}{DAT256x: Essential Math for Machine Learning: Python Edition}{Microsoft}{Online}{}{}
-% \cventry{Apr.~2020}{DA0101EN: Analyzing Data with Python}{IBM}{Online}{}{}
-% \cventry{Apr.~2020}{DB0201EN: SQL for Data Science}{IBM}{Online}{}{}
-
-\cvsection{Ehrenamt}
-\begin{cventries}
-\cventry{Wissenschaftlicher Betreuer}{Duale Hochschule Baden-Württemberg}{Karlsruhe}{Jun.~2021 -- heute}{Betreuung von Projekt- und Bachelorarbeiten mit Fokus auf Machine Learning}
-\end{cventries}
-
-% \includepdf[pages=-]{arbeitszeugnis_fiducia_gad}
-% \includepdf[pages=-]{arbeitszeugnis_rb_aschberg}
-% \includepdf[pages=-]{notenauszug_master}
-% \includepdf[pages=-]{bachelorzeugnis}
+\section{Hobbies}
+\cvitem{}{Spazieren, Grillen und Minimalismus}{}{}
 
 \end{document}
