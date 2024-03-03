@@ -275,5 +275,8 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
+# backup files from formatting
+*.bak
+
 venv/
 env/
