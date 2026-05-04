@@ -1,10 +1,15 @@
 {
     "spellright.language": [
-        "de"
+        "de-DE",
+        "en-GB"
     ],
     "spellright.documentTypes": [
         "markdown",
         "latex",
         "plaintext"
+    ],
+    "cSpell.words": [
+        "onnx",
+        "sklearn"
     ]
 }
