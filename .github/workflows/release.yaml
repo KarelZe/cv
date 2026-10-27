@@ -1,0 +1,79 @@
+# Builds the German and English CV and publishes them as a GitHub release.
+# Trigger manually via "Actions" -> "Release CV" -> "Run workflow".
+# Versions follow calendar versioning YY.M.N, e.g. 26.10.1 for the first release in October 2026.
+name: Release CV
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version override (leave empty to auto-generate YY.M.N, e.g. 26.10.1)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # required to inspect existing tags
+
+      - name: Determine version
+        id: version
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
+        run: |
+          git fetch --tags origin || true
+          if [ -n "$VERSION_INPUT" ]; then
+            version="$VERSION_INPUT"
+          else
+            year=$(date -u +%y)
+            month=$(date -u +%m | sed 's/^0//')
+            prefix="${year}.${month}"
+            last=$(git tag -l "${prefix}.*" | grep -E "^${prefix}\.[0-9]+$" | awk -F. '{print $3}' | sort -n | tail -n1)
+            version="${prefix}.$(( ${last:-0} + 1 ))"
+          fi
+          if git rev-parse -q --verify "refs/tags/${version}" >/dev/null; then
+            echo "::error::Tag ${version} already exists."
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "Releasing version ${version}"
+
+      - name: Stamp version into documents
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          perl -pi -e 's/\\cvversion\}\{dev\}/\\cvversion}{$ENV{VERSION}}/' cv_de.tex cv_en.tex
+          grep -F "\\cvversion}{${VERSION}}" cv_de.tex cv_en.tex
+
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@6549dc21effb2730855a1281407ecfcececc6c1b # v4.1.0
+        with:
+          root_file: |
+            cv_en.tex
+            cv_de.tex
+          latexmk_use_xelatex: true
+          extra_fonts: |
+            ./fonts/*.otf
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          mkdir dist
+          cp cv_de.pdf "dist/cv_de_${VERSION}.pdf"
+          cp cv_en.pdf "dist/cv_en_${VERSION}.pdf"
+          gh release create "${VERSION}" dist/*.pdf \
+            --target "${GITHUB_SHA}" \
+            --title "CV ${VERSION}" \
+            --generate-notes
