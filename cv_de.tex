@@ -108,7 +108,7 @@
 
 % \section{Fähigkeiten}
 % \cvitemwithcomment{Programmiersprachen}{Python (fortgeschritten), Java (Grundkenntnisse) und SQL (Grundkenntnisse)}{}
-% \cvitemwithcomment{Bibliotheken}{\makecell[tl]{CatBoost, Hydra, Matplotlib, MLflow, NumPy, Optuna, pandas, pytest,\\ PyTorch, scikit-learn, sklearn-onnx und wandb}}{}
+% \cvitemwithcomment{Bibliotheken}{\makecell[tl]{Hydra, Matplotlib, MLflow, Model Context Protocol (MCP), NumPy,\\% NVIDIA Triton, ONNX Script, Optuna, pandas, pytest, PyTorch, scikit-learn,\\% sklearn-onnx und wandb}}{}
 % \cvitemwithcomment{Softwareentwicklung}{Git, Jupyter und Linux}{}
 
 \section{Ausbildung}
@@ -148,9 +148,10 @@
 \subsection{Data Scientist}
 \cventry{Feb.~2024 -- heute}{}{Atruvia AG}{Karlsruhe, DE}{}{Aufgaben:%
 	\begin{itemize}%
-		\item Konzeption und Neuimplementierung von Document-AI-Lösungen
-		\item Generierung synthetischer Datensätze
-		      % \item Experimentelle Modelloptimierungen
+		\item Konzeption und Bereitstellung von Document-AI-Lösungen im produktiven Einsatz mit ca.~1{,}5~Mio. verarbeiteten Dokumenten pro Jahr
+		\item Generierung synthetischer Dokumente und Datensätze zur signifikanten Steigerung der Extraktionsqualität und des F1-Scores von Entity-Extraction-Modellen
+		\item Optimierung der Modellinferenz mittels ONNX, ONNX Script und NVIDIA Triton für latenzarmes und hochperformantes Serving
+		\item Konzeption der unternehmensweiten MCP-Architektur (Model Context Protocol) zur Anbindung von Enterprise-Banking-APIs und -Werkzeugen an interne LLM-Agenten (aktuell in Testphase)
 		\item Recherche und Evaluierung alternativer Modellarchitekturen
 	\end{itemize}%
 }
