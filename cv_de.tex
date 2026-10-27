@@ -87,9 +87,11 @@
     \vfill%
     {\color{color2}\itshape\enclname: \@enclosure}}}
 
+% version shown in the footer; replaced by the release workflow
+\newcommand*{\cvversion}{dev}
 \renewcommand*{\makecvfoot}{%
   \recomputecvlengths%
-  \fancyfoot[C]{\small rev \texttt{c788c46}}%
+  \fancyfoot[C]{\small Version \texttt{\cvversion}}%
   \fancyfoot[R]{\thepage}%
 }
 \makeatother
