@@ -71,8 +71,9 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           mkdir dist
-          cp cv_de.pdf "dist/cv_de_${VERSION}.pdf"
-          cp cv_en.pdf "dist/cv_en_${VERSION}.pdf"
+          VERSION_FILE="${VERSION//./_}"
+          cp cv_de.pdf "dist/cv_de_${VERSION_FILE}.pdf"
+          cp cv_en.pdf "dist/cv_en_${VERSION_FILE}.pdf"
           gh release create "${VERSION}" dist/*.pdf \
             --target "${GITHUB_SHA}" \
             --title "CV ${VERSION}" \
